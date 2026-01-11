@@ -28,18 +28,14 @@ app.post('/generate-pdf', async (req, res) => {
         templateHtml = templateHtml.replace('{{USER_BOOK_TITLE}}', bookTitle.toUpperCase());
 
      const browser = await puppeteer.launch({
+    headless: 'new',
     args: [
         '--no-sandbox',
         '--disable-setuid-sandbox',
         '--disable-dev-shm-usage',
-        '--disable-accelerated-2d-canvas',
-        '--no-first-run',
-        '--no-zygote',
         '--single-process',
-        '--disable-gpu'
-    ],
-    executablePath: process.env.PUPPETEER_EXECUTABLE_PATH || null, // Render lo usará si lo definimos
-    headless: 'new' // O true
+        '--no-zygote'
+    ]
 });
 
         const page = await browser.newPage();
