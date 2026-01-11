@@ -9,10 +9,13 @@
             font-family: 'Georgia', serif;
             background-color: #f4f4f4;
             display: flex;
+            flex-direction: column; /* Esto hace que el footer quede abajo de la caja */
             justify-content: center;
             align-items: center;
-            height: 100vh;
+            min-height: 100vh;
             margin: 0;
+            padding: 20px;
+            box-sizing: border-box;
         }
         .container {
             background: white;
@@ -21,7 +24,8 @@
             box-shadow: 0 4px 15px rgba(0,0,0,0.1);
             text-align: center;
             max-width: 400px;
-            width: 90%;
+            width: 100%;
+            margin-bottom: 20px; /* Espacio entre la caja y el footer */
         }
         h1 { font-family: "Times New Roman", serif; margin-bottom: 0.5rem; }
         p { color: #666; margin-bottom: 2rem; font-size: 0.9rem; }
@@ -48,6 +52,25 @@
             transition: background 0.3s;
         }
         button:hover { background-color: #333; }
+
+        /* Estilos del Footer */
+        .footer {
+            text-align: center;
+            font-size: 0.8rem;
+            color: #888;
+            font-family: sans-serif;
+            line-height: 1.5;
+        }
+        .footer a {
+            color: #666;
+            text-decoration: none;
+            border-bottom: 1px dotted #999;
+            transition: color 0.2s;
+        }
+        .footer a:hover {
+            color: #000;
+            border-bottom: 1px solid #000;
+        }
     </style>
 </head>
 <body>
@@ -59,6 +82,11 @@
             <input type="text" name="bookTitle" placeholder="El Título de tu Libro" required>
             <button type="submit">DESCARGAR PDF</button>
         </form>
+    </div>
+
+    <div class="footer">
+        &copy; 2026 Alfonso Aguirre Corp, LLC. Recurso de la<br>
+        <a href="https://www.alfonsoaguirre.com/academia" target="_blank">Academia de Escritores </a>
     </div>
 </body>
 </html>
