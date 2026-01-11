@@ -27,7 +27,7 @@ app.post('/generate-pdf', async (req, res) => {
         templateHtml = templateHtml.replace('{{USER_AUTHOR_NAME}}', authorName);
         templateHtml = templateHtml.replace('{{USER_BOOK_TITLE}}', bookTitle.toUpperCase());
 
-     const browser = await puppeteer.launch({
+   const browser = await puppeteer.launch({
     headless: 'new',
     args: [
         '--no-sandbox',
