@@ -1,181 +1,165 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <meta http-equiv="Content-Style-Type" content="text/css">
-  <title></title>
-  <meta name="Generator" content="Cocoa HTML Writer">
-  <meta name="CocoaVersion" content="2575.7">
-  <style type="text/css">
-    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
-    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
-  </style>
+    <meta charset="UTF-8">
+    <title>NYT Template</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap');
+
+        body {
+            margin: 0;
+            padding: 40px;
+            font-family: 'Libre Baskerville', Georgia, serif; 
+            color: #111;
+            background-color: #fff;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            border-bottom: 4px double black;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        .copyright { font-size: 0.7rem; color: #555; }
+        .main-title { text-align: center; flex-grow: 1; }
+        .main-title h1 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 900;
+            font-size: 1.8rem;
+            margin: 0;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .best-sellers-title {
+            font-family: 'Playfair Display', serif;
+            font-weight: 900;
+            font-size: 3rem;
+            margin: 10px 0 0 0;
+        }
+        .date { font-size: 0.9rem; font-style: italic; }
+        .content-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 2px solid black;
+            margin-bottom: 10px;
+            padding-bottom: 5px;
+            font-family: sans-serif;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+        .section-title { font-size: 1.2rem; font-family: 'Playfair Display', serif; }
+        .stats-header { display: flex; gap: 15px; text-align: right; }
+        ol { list-style: none; padding: 0; margin: 0; }
+        li {
+            display: flex;
+            margin-bottom: 15px;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 10px;
+        }
+        .rank {
+            font-size: 1.8rem;
+            font-weight: bold;
+            margin-right: 15px;
+            line-height: 1;
+        }
+        .book-details { flex-grow: 1; font-size: 0.85rem; }
+        .book-title { font-weight: bold; text-transform: uppercase; }
+        .book-meta { font-style: italic; }
+        .book-desc { margin-top: 4px; }
+        .stats {
+            display: flex;
+            gap: 25px;
+            text-align: right;
+            font-family: sans-serif;
+            font-size: 0.8rem;
+            min-width: 60px;
+            justify-content: flex-end;
+        }
+    </style>
 </head>
 <body>
-<p class="p1">&lt;!DOCTYPE html&gt;</p>
-<p class="p1">&lt;html lang="en"&gt;</p>
-<p class="p1">&lt;head&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta charset="UTF-8"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;title&gt;NYT Template&lt;/title&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;style&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&amp;family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&amp;display=swap');</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>body {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>margin: 0;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>padding: 40px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-family: 'Libre Baskerville', Georgia, serif;<span class="Apple-converted-space"> </span></p>
-<p class="p1"><span class="Apple-converted-space">            </span>color: #111;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>background-color: #fff;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.header {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>display: flex;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>justify-content: space-between;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>align-items: flex-end;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>border-bottom: 4px double black;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>padding-bottom: 10px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 20px;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.copyright { font-size: 0.7rem; color: #555; }</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.main-title { text-align: center; flex-grow: 1; }</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.main-title h1 {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-family: 'Playfair Display', serif;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-weight: 900;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-size: 1.8rem;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>margin: 0;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>text-transform: uppercase;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>letter-spacing: 1px;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.best-sellers-title {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-family: 'Playfair Display', serif;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-weight: 900;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-size: 3rem;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>margin: 10px 0 0 0;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.date { font-size: 0.9rem; font-style: italic; }</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.content-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.section-header {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>display: flex;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>justify-content: space-between;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>border-bottom: 2px solid black;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 10px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>padding-bottom: 5px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-family: sans-serif;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-size: 0.8rem;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-weight: bold;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.section-title { font-size: 1.2rem; font-family: 'Playfair Display', serif; }</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.stats-header { display: flex; gap: 15px; text-align: right; }</p>
-<p class="p1"><span class="Apple-converted-space">        </span>ol { list-style: none; padding: 0; margin: 0; }</p>
-<p class="p1"><span class="Apple-converted-space">        </span>li {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>display: flex;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 15px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>border-bottom: 1px solid #ddd;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>padding-bottom: 10px;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.rank {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-size: 1.8rem;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-weight: bold;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>margin-right: 15px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>line-height: 1;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.book-details { flex-grow: 1; font-size: 0.85rem; }</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.book-title { font-weight: bold; text-transform: uppercase; }</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.book-meta { font-style: italic; }</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.book-desc { margin-top: 4px; }</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.stats {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>display: flex;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>gap: 25px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>text-align: right;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-family: sans-serif;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-size: 0.8rem;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>min-width: 60px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>justify-content: flex-end;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/style&gt;</p>
-<p class="p1">&lt;/head&gt;</p>
-<p class="p1">&lt;body&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="header"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="copyright"&gt;Copyright © 2026 by&lt;br&gt;The New York Times&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="main-title"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;h1&gt;The New York Times Book Review&lt;/h1&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;h2 class="best-sellers-title"&gt;Best Sellers&lt;/h2&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="date"&gt;{{CURRENT_DATE}}&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="content-grid"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="fiction"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="section-header"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="section-title"&gt;FICTION&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="stats-header"&gt;&lt;span&gt;Last&lt;br&gt;Week&lt;/span&gt;&lt;span&gt;Weeks&lt;br&gt;On List&lt;/span&gt;&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;ol&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="rank"&gt;1&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="book-details"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;span class="book-title"&gt;{{USER_BOOK_TITLE}}&lt;/span&gt;, by {{USER_AUTHOR_NAME}}.</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;span class="book-meta"&gt;(Generated Press, $Infinity.)&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="book-desc"&gt;A sensational new work that has captivated readers worldwide, creating an instant phenomenon.&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="stats"&gt;&lt;span&gt;--&lt;/span&gt;&lt;span&gt;1&lt;/span&gt;&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="rank"&gt;2&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="book-details"&gt;&lt;span class="book-title"&gt;AT FIRST SIGHT&lt;/span&gt;, by Nicholas Sparks. (Warner, $24.95.) The young couple from "True Believer," who are now expecting a child, receive a disturbing message.&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="stats"&gt;&lt;span&gt;2&lt;/span&gt;&lt;span&gt;7&lt;/span&gt;&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="rank"&gt;3&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="book-details"&gt;&lt;span class="book-title"&gt;LIGHT FROM HEAVEN&lt;/span&gt;, by Jan Karon. (Viking, $26.95.) Father Tim's bishop asks him to revive a long-closed mountain church; the final novel in the Mitford series.&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="stats"&gt;&lt;span&gt;3&lt;/span&gt;&lt;span&gt;4&lt;/span&gt;&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="rank"&gt;4&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="book-details"&gt;&lt;span class="book-title"&gt;FOREVER ODD&lt;/span&gt;, by Dean Koontz. (Bantam, $27.) Odd Thomas, a character from Koontz's 2003 novel of the same name who can communicate with the dead, searches for a missing friend.&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="stats"&gt;&lt;span&gt;--&lt;/span&gt;&lt;span&gt;1&lt;/span&gt;&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="rank"&gt;5&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="book-details"&gt;&lt;span class="book-title"&gt;THE DA VINCI CODE&lt;/span&gt;, by Dan Brown. (Doubleday, $24.95; special illustrated edition, $35.) A murder at the Louvre leads to a trail of clues found in the work of Leonardo and to the discovery of a secret society.&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="stats"&gt;&lt;span&gt;8&lt;/span&gt;&lt;span&gt;141&lt;/span&gt;&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;/ol&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="nonfiction"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="section-header"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="section-title"&gt;NONFICTION&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="stats-header"&gt;&lt;span&gt;Last&lt;br&gt;Week&lt;/span&gt;&lt;span&gt;Weeks&lt;br&gt;On List&lt;/span&gt;&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;ol&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="rank"&gt;1&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="book-details"&gt;&lt;span class="book-title"&gt;TEACHER MAN&lt;/span&gt;, by Frank McCourt. (Scribner, $26.) The author of "Angela's Ashes" remembers his years teaching high school English in New York City.&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="stats"&gt;&lt;span&gt;2&lt;/span&gt;&lt;span&gt;3&lt;/span&gt;&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="rank"&gt;2&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="book-details"&gt;&lt;span class="book-title"&gt;OUR ENDANGERED VALUES&lt;/span&gt;, by Jimmy Carter. (Simon &amp; Schuster, $25.) The former president warns against blurring politics and fundamentalist religion.&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="stats"&gt;&lt;span&gt;1&lt;/span&gt;&lt;span&gt;5&lt;/span&gt;&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="rank"&gt;3&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="book-details"&gt;&lt;span class="book-title"&gt;TEAM OF RIVALS&lt;/span&gt;, by Doris Kearns Goodwin. (Simon &amp; Schuster, $35.) The political genius of Abraham Lincoln, revealed in his relationship with his cabinet, from the author of "No Ordinary Time."&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="stats"&gt;&lt;span&gt;3&lt;/span&gt;&lt;span&gt;6&lt;/span&gt;&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="rank"&gt;4&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="book-details"&gt;&lt;span class="book-title"&gt;THE WORLD IS FLAT&lt;/span&gt;, by Thomas L. Friedman. (Farrar, Straus &amp; Giroux, $27.50.) A columnist for The New York Times analyzes 21st-century economics and foreign policy.&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="stats"&gt;&lt;span&gt;4&lt;/span&gt;&lt;span&gt;35&lt;/span&gt;&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="rank"&gt;5&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="book-details"&gt;&lt;span class="book-title"&gt;MARLEY &amp; ME&lt;/span&gt;, by John Grogan. (Morrow, $21.95.) A newspaper columnist and his wife learn some life lessons from their neurotic dog.&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="stats"&gt;&lt;span&gt;7&lt;/span&gt;&lt;span&gt;7&lt;/span&gt;&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;/ol&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
-<p class="p1">&lt;/body&gt;</p>
-<p class="p1">&lt;/html&gt;</p>
+    <div class="header">
+        <div class="copyright">Copyright © 2026 by<br>The New York Times</div>
+        <div class="main-title">
+            <h1>The New York Times Book Review</h1>
+            <h2 class="best-sellers-title">Best Sellers</h2>
+        </div>
+        <div class="date">{{CURRENT_DATE}}</div>
+    </div>
+
+    <div class="content-grid">
+        <div class="fiction">
+            <div class="section-header">
+                <div class="section-title">FICTION</div>
+                <div class="stats-header"><span>Last<br>Week</span><span>Weeks<br>On List</span></div>
+            </div>
+            <ol>
+                <li>
+                    <div class="rank">1</div>
+                    <div class="book-details">
+                        <span class="book-title">{{USER_BOOK_TITLE}}</span>, by {{USER_AUTHOR_NAME}}.
+                        <span class="book-meta">(Generated Press, $Infinity.)</span>
+                        <div class="book-desc">A sensational new work that has captivated readers worldwide, creating an instant phenomenon.</div>
+                    </div>
+                    <div class="stats"><span>--</span><span>1</span></div>
+                </li>
+                <li>
+                    <div class="rank">2</div>
+                    <div class="book-details"><span class="book-title">AT FIRST SIGHT</span>, by Nicholas Sparks. (Warner, $24.95.) The young couple from "True Believer," who are now expecting a child, receive a disturbing message.</div>
+                    <div class="stats"><span>2</span><span>7</span></div>
+                </li>
+                <li>
+                    <div class="rank">3</div>
+                    <div class="book-details"><span class="book-title">LIGHT FROM HEAVEN</span>, by Jan Karon. (Viking, $26.95.) Father Tim's bishop asks him to revive a long-closed mountain church; the final novel in the Mitford series.</div>
+                    <div class="stats"><span>3</span><span>4</span></div>
+                </li>
+                <li>
+                    <div class="rank">4</div>
+                    <div class="book-details"><span class="book-title">FOREVER ODD</span>, by Dean Koontz. (Bantam, $27.) Odd Thomas, a character from Koontz's 2003 novel of the same name who can communicate with the dead, searches for a missing friend.</div>
+                    <div class="stats"><span>--</span><span>1</span></div>
+                </li>
+                <li>
+                    <div class="rank">5</div>
+                    <div class="book-details"><span class="book-title">THE DA VINCI CODE</span>, by Dan Brown. (Doubleday, $24.95; special illustrated edition, $35.) A murder at the Louvre leads to a trail of clues found in the work of Leonardo and to the discovery of a secret society.</div>
+                    <div class="stats"><span>8</span><span>141</span></div>
+                </li>
+            </ol>
+        </div>
+        <div class="nonfiction">
+            <div class="section-header">
+                <div class="section-title">NONFICTION</div>
+                <div class="stats-header"><span>Last<br>Week</span><span>Weeks<br>On List</span></div>
+            </div>
+            <ol>
+                <li>
+                    <div class="rank">1</div>
+                    <div class="book-details"><span class="book-title">TEACHER MAN</span>, by Frank McCourt. (Scribner, $26.) The author of "Angela's Ashes" remembers his years teaching high school English in New York City.</div>
+                    <div class="stats"><span>2</span><span>3</span></div>
+                </li>
+                <li>
+                    <div class="rank">2</div>
+                    <div class="book-details"><span class="book-title">OUR ENDANGERED VALUES</span>, by Jimmy Carter. (Simon & Schuster, $25.) The former president warns against blurring politics and fundamentalist religion.</div>
+                    <div class="stats"><span>1</span><span>5</span></div>
+                </li>
+                <li>
+                    <div class="rank">3</div>
+                    <div class="book-details"><span class="book-title">TEAM OF RIVALS</span>, by Doris Kearns Goodwin. (Simon & Schuster, $35.) The political genius of Abraham Lincoln, revealed in his relationship with his cabinet, from the author of "No Ordinary Time."</div>
+                    <div class="stats"><span>3</span><span>6</span></div>
+                </li>
+                <li>
+                    <div class="rank">4</div>
+                    <div class="book-details"><span class="book-title">THE WORLD IS FLAT</span>, by Thomas L. Friedman. (Farrar, Straus & Giroux, $27.50.) A columnist for The New York Times analyzes 21st-century economics and foreign policy.</div>
+                    <div class="stats"><span>4</span><span>35</span></div>
+                </li>
+                <li>
+                    <div class="rank">5</div>
+                    <div class="book-details"><span class="book-title">MARLEY & ME</span>, by John Grogan. (Morrow, $21.95.) A newspaper columnist and his wife learn some life lessons from their neurotic dog.</div>
+                    <div class="stats"><span>7</span><span>7</span></div>
+                </li>
+            </ol>
+        </div>
+    </div>
 </body>
 </html>
