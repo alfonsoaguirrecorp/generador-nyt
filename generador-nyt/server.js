@@ -21,6 +21,8 @@ app.post('/generate-pdf', async (req, res) => {
         
         const options = { year: 'numeric', month: 'long', day: 'numeric' };
         const formattedDate = date.toLocaleDateString('en-US', options);
+        
+        templateHtml = templateHtml.replace('{{COPYRIGHT_YEAR}}', date.getFullYear());
 
         let templateHtml = fs.readFileSync(path.join(__dirname, 'template.html'), 'utf8');
 
