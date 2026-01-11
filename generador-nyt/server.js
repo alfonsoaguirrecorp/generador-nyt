@@ -55,7 +55,7 @@ app.post('/generate-pdf', async (req, res) => {
             'Content-Disposition': `attachment; filename="NYT_BestSeller_${safeFilename}.pdf"`,
             'Content-Length': pdfBuffer.length
         });
-        res.send(pdfBuffer);
+       res.send(Buffer.from(pdfBuffer));
 
     } catch (error) {
         console.error('Error:', error);
