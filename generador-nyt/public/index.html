@@ -5,18 +5,61 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Generador NYT Best Seller</title>
     <style>
+        /* Estilos Generales */
         body {
             font-family: 'Georgia', serif;
             background-color: #f4f4f4;
             display: flex;
-            flex-direction: column; /* Esto hace que el footer quede abajo de la caja */
-            justify-content: center;
+            flex-direction: column;
             align-items: center;
+            /* Quitamos height: 100vh para permitir scroll si es necesario */
             min-height: 100vh;
             margin: 0;
-            padding: 20px;
+            padding-top: 100px; /* Espacio para que la barra de arriba no tape el contenido */
+            padding-bottom: 40px;
             box-sizing: border-box;
         }
+
+        /* BARRA DE NAVEGACIÓN SUPERIOR (NUEVO) */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 80px;
+            background-color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 5%; /* Margen a los lados */
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            box-sizing: border-box;
+            z-index: 1000; /* Para que siempre esté encima de todo */
+        }
+
+        .logo-img {
+            max-height: 40px; /* Tamaño controlado del logo */
+            width: auto;
+        }
+
+        /* Botón de la Academia (Estilo igual al de descargar PDF) */
+        .btn-academia {
+            background-color: #000;
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            font-family: sans-serif; /* Fuente más limpia para botones */
+            font-weight: bold;
+            font-size: 0.9rem;
+            transition: background 0.3s;
+            white-space: nowrap; /* Que el texto no se rompa en dos líneas */
+        }
+        .btn-academia:hover {
+            background-color: #333;
+        }
+
+        /* Estilos de la Caja Central */
         .container {
             background: white;
             padding: 2.5rem;
@@ -24,11 +67,14 @@
             box-shadow: 0 4px 15px rgba(0,0,0,0.1);
             text-align: center;
             max-width: 400px;
-            width: 100%;
-            margin-bottom: 20px; /* Espacio entre la caja y el footer */
+            width: 90%;
+            margin-bottom: 40px;
+            margin-top: 20px;
         }
         h1 { font-family: "Times New Roman", serif; margin-bottom: 0.5rem; }
         p { color: #666; margin-bottom: 2rem; font-size: 0.9rem; }
+        
+        /* Inputs del formulario */
         input {
             width: 100%;
             padding: 12px;
@@ -38,6 +84,8 @@
             border-radius: 4px;
             font-family: inherit;
         }
+
+        /* Botón del Formulario */
         button {
             width: 100%;
             padding: 12px;
@@ -53,13 +101,14 @@
         }
         button:hover { background-color: #333; }
 
-        /* Estilos del Footer */
+        /* Footer */
         .footer {
             text-align: center;
             font-size: 0.8rem;
             color: #888;
             font-family: sans-serif;
             line-height: 1.5;
+            margin-top: auto; /* Empuja el footer al final si sobra espacio */
         }
         .footer a {
             color: #666;
@@ -71,9 +120,38 @@
             color: #000;
             border-bottom: 1px solid #000;
         }
+
+        /* RESPONSIVE: Ajustes para celular */
+        @media (max-width: 600px) {
+            .navbar {
+                flex-direction: column; /* Apila logo arriba y botón abajo */
+                height: auto;
+                padding: 15px 20px;
+                gap: 15px;
+            }
+            body {
+                padding-top: 140px; /* Más espacio arriba porque la barra es más alta */
+            }
+            .logo-img {
+                max-height: 35px;
+            }
+            .btn-academia {
+                width: 100%; /* Botón ancho completo en cel */
+                text-align: center;
+            }
+        }
     </style>
 </head>
 <body>
+
+    <nav class="navbar">
+        <a href="https://www.alfonsoaguirre.com/academia">
+            <img src="hhttps://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/file-uploads/themes/2156574916/settings_images/385edf-44d8-6a7-13d2-17fdcfa60bc0_a9a0ab47-0a14-4c73-b7e2-370d6f2f2e18.png" alt="Alfonso Aguirre" class="logo-img">
+        </a>
+        
+        <a href="https://www.alfonsoaguirre.com/academia" class="btn-academia">Academia de Escritores</a>
+    </nav>
+
     <div class="container">
         <h1>Generador de Best Sellers</h1>
         <p>Aparece en la lista #1 del New York Times.</p>
@@ -85,8 +163,9 @@
     </div>
 
     <div class="footer">
-        &copy; 2026 Alfonso Aguirre Corp, LLC. Recurso de la<br>
-        <a href="https://www.alfonsoaguirre.com/academia" target="_blank">Academia de Escritores </a>
+        &copy; 2026 Alfonso Aguirre Corp, LLC. Recurso de la 
+        <a href="https://www.alfonsoaguirre.com/academia" target="_blank">Academia de Escritores</a>
     </div>
+
 </body>
 </html>
