@@ -16,10 +16,11 @@ app.get('/', (req, res) => {
 
 app.post('/generate-pdf', async (req, res) => {
     try {
-        const { authorName, bookTitle } = req.body;
-        const today = new Date();
+       const date = new Date();
+        date.setFullYear(date.getFullYear() + 1); // <--- AQUÍ ESTÁ LA MAGIA: Sumamos 1 año
+        
         const options = { year: 'numeric', month: 'long', day: 'numeric' };
-        const formattedDate = today.toLocaleDateString('en-US', options);
+        const formattedDate = date.toLocaleDateString('en-US', options);
 
         let templateHtml = fs.readFileSync(path.join(__dirname, 'template.html'), 'utf8');
 
