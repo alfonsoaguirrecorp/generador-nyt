@@ -146,22 +146,36 @@
         }
 
         /* RESPONSIVE */
+       /* RESPONSIVE: Ajustes para celular Sofisticado */
         @media (max-width: 600px) {
             .navbar {
-                flex-direction: column;
-                height: auto;
-                padding: 15px 20px;
-                gap: 15px;
+                /* Mantenemos la dirección en fila (lado a lado) */
+                flex-direction: row; 
+                justify-content: space-between; /* Logo izquierda, Botón derecha */
+                height: 70px; /* Un poco más compacta la barra */
+                padding: 0 20px; /* Espacio a los lados */
+                gap: 10px; /* Espacio mínimo entre logo y botón */
             }
+            
             body {
-                padding-top: 140px;
+                padding-top: 100px; /* Ajustamos el espacio del cuerpo */
             }
+
             .logo-img {
-                max-height: 35px;
+                /* Logo más discreto para dar espacio al botón */
+                max-height: 28px; 
             }
+
             .btn-academia {
-                width: 100%;
-                text-align: center;
+                width: auto; /* IMPORTANTE: Ya no abarca toda la pantalla */
+                font-size: 0.75rem; /* Letra más pequeña y elegante */
+                padding: 8px 12px; /* Botón más compacto */
+                white-space: nowrap; /* Obliga al texto a estar en una sola línea */
+            }
+            
+            /* Ajuste extra para que el título no se pegue tanto arriba en cel */
+            .container {
+                margin-top: 10px;
             }
         }
     </style>
