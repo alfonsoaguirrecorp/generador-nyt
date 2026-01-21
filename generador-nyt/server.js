@@ -61,7 +61,6 @@ app.post('/generate-pdf', async (req, res) => {
         const pdfBuffer = await page.pdf({
             format: 'Letter',
             printBackground: true,
-            // AQUÍ ESTÁ EL CAMBIO: Redujimos top y bottom a 0.3in (antes era 0.5in)
             margin: { top: '0.3in', right: '0.5in', bottom: '0.3in', left: '0.5in' },
             timeout: 60000 // 60 segundos
         });
@@ -89,10 +88,6 @@ app.post('/generate-pdf', async (req, res) => {
             await browser.close();
         }
     }
-});
-
-app.listen(port, () => {
-    console.log(`Servidor corriendo en el puerto ${port}`);
 });
 
 app.listen(port, () => {
