@@ -59,12 +59,6 @@ app.post('/generate-pdf', async (req, res) => {
             timeout: 60000 
         });
 
-        const pdfBuffer = await page.pdf({
-            format: 'Letter',
-            printBackground: true,
-            margin: { top: '0.5in', right: '0.5in', bottom: '0.5in', left: '0.5in' },
-            timeout: 60000 // 60 segundos
-        });
 
         // Nombre del archivo limpio
         const safeFilename = bookTitle.replace(/[^a-z0-9]/gi, '_').toLowerCase();
