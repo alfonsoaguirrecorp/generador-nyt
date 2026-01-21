@@ -50,15 +50,21 @@ app.post('/generate-pdf', async (req, res) => {
             ]
         });
 
-       // Generar PDF
+        const page = await browser.newPage();
+        
+        // Configuramos tiempos de espera largos para evitar timeouts
+        await page.setContent(templateHtml, { 
+            waitUntil: 'networkidle2',
+            timeout: 60000 // 60 segundos
+        });
+
         const pdfBuffer = await page.pdf({
             format: 'Letter',
             printBackground: true,
             // AQUÍ ESTÁ EL CAMBIO: Redujimos top y bottom a 0.3in (antes era 0.5in)
             margin: { top: '0.3in', right: '0.5in', bottom: '0.3in', left: '0.5in' },
-            timeout: 60000 
+            timeout: 60000 // 60 segundos
         });
-
 
         // Nombre del archivo limpio
         const safeFilename = bookTitle.replace(/[^a-z0-9]/gi, '_').toLowerCase();
@@ -83,6 +89,10 @@ app.post('/generate-pdf', async (req, res) => {
             await browser.close();
         }
     }
+});
+
+app.listen(port, () => {
+    console.log(`Servidor corriendo en el puerto ${port}`);
 });
 
 app.listen(port, () => {
